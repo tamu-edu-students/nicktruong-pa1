@@ -12,6 +12,15 @@ end
 
 def max_2_sum(arr)
   # YOUR CODE HERE
+  max1 = arr[0]
+  max2 = arr[0]
+  for num in arr do
+    if num > max1
+      max2 = max1
+      max1 = num
+    elsif num > max2 && num!= max1
+      max2 = num
+  return max2 + max1
 end
 
 def sum_to_n?(arr, number)

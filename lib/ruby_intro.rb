@@ -32,15 +32,22 @@ end
 
 def hello(name)
   # YOUR CODE HERE
-  put "Hello, " + name
+  return "Hello, " + name
 end
 
 def starts_with_consonant?(string)
   # YOUR CODE HERE
+  return false if string.empty?
+  return false unless string[0].match?(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/)
+  true
 end
 
 def binary_multiple_of_4?(string)
   # YOUR CODE HERE
+  return false if string.empty?
+  return false unless string.match?(/^[01]+$/)
+  return false if string.to_i(2) % 4!= 0
+  true
 end
 
 # Part 3
@@ -48,4 +55,22 @@ end
 # Object representing a book
 class BookInStock
   # YOUR CODE HERE
+  attr_accessor :isbn, :price
+
+  def initialize(isbn, price)
+    raise(ArgumentError) if isbn.length == 0
+    raise(ArgumentError) if price <= 0
+    @isbn = isbn
+    @price = price
+  end
+
+  # def display_info
+  #   "ISBN: #{isbn}, Price: $#{price}"
+  # end
+
+  def price_as_string()
+    return format("$%.2f", @price)
+
+  end
+
 end

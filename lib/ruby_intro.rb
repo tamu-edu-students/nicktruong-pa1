@@ -4,23 +4,21 @@
 
 def sum(arr)
   # YOUR CODE HERE
-  total = 0
-  for num in arr do
-    total = total + num
-  return total
+  sum = 0
+  for value in arr
+    sum += value
+  end
+  sum
 end
 
 def max_2_sum(arr)
   # YOUR CODE HERE
-  max1 = arr[0]
-  max2 = arr[0]
-  for num in arr do
-    if num > max1
-      max2 = max1
-      max1 = num
-    elsif num > max2 && num!= max1
-      max2 = num
-  return max2 + max1
+  if arr.length == 1
+    return arr[0]
+  elsif arr.length == 0
+    return 0
+  end
+  return arr.sort[-1] + arr.sort[-2]
 end
 
 def sum_to_n?(arr, number)

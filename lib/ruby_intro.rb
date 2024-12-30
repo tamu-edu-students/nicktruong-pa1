@@ -13,22 +13,26 @@ end
 
 def max_2_sum(arr)
   # YOUR CODE HERE
-  if arr.length == 1
-    return arr[0]
-  elsif arr.length == 0
-    return 0
-  end
+  return arr[0] if arr.length == 1
+  return 0 if arr.length == 0
   return arr.sort[-1] + arr.sort[-2]
 end
 
 def sum_to_n?(arr, number)
   # YOUR CODE HERE
+  hashmap = {}
+  for value in arr
+    return true if hashmap[number-value]
+    hashmap[value] = true
+  end
+  return false
 end
 
 # Part 2
 
 def hello(name)
   # YOUR CODE HERE
+  put "Hello, " + name
 end
 
 def starts_with_consonant?(string)
